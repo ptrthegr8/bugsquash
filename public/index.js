@@ -5,6 +5,26 @@ let scoreSpan = document.getElementById("scoreSpan")
 let countdown = 10, score = 0;
 let startTime;
 
+function gameOver() {
+    // This is the function that gets called when the game is over.
+    // Update this to post the new score to the server.
+    window.alert("You squashed " + score + " bugs!");
+}
+
+function playGame() {
+    playerName = document.getElementById("playerName").value;
+    console.log(playerName);
+    if(playerName.length<3) {
+        alert("You must enter your name before playing.");
+        return;
+    }    
+    document.getElementById("startButton").style.display = "none";
+
+    startTime = Date.now();
+    score = 0;
+    onTick();
+}
+
 function bugholeHTML(left, top, imgUrl) {
     return `
     <div class="bugOuter" style="left: ${left}px; top: ${top}px;">
@@ -20,7 +40,6 @@ for(let row = 0; row < 4; row++) {
     }
 }
 const bugs = document.getElementsByClassName("bug");
-console.log(bugs);
 
 for(let i = 0; i<bugs.length; i++) {
     bugs[i].onclick = splat;
@@ -38,7 +57,6 @@ function splat(event) {
 }
 
 function animate(obj) {
-    console.log(obj);
     obj.style.top = "0px";
     obj.classList.add("popup");
     setTimeout(function() {
@@ -53,7 +71,7 @@ function animate(obj) {
 
 function onTick() {
     let elapsed = (Date.now() - startTime)/1000;
-    console.log(elapsed);
+    //console.log(elapsed);
     countdown = 20 - Math.floor(elapsed);
     if(countdown >= 0) {
         countdownSpan.innerHTML = countdown;
@@ -71,16 +89,8 @@ function onTick() {
         setTimeout(onTick, 50);
     } else {
         document.getElementById("startButton").style.display = "inline-block";
-        window.alert("You squashed " + score + " bugs!");
+        gameOver();
     }
-}
-
-function playGame() {
-    document.getElementById("startButton").style.display = "none";
-    playerName = document.getElementById("playerName").value;
-    startTime = Date.now();
-    score = 0;
-    onTick();
 }
 
 document.getElementById("startButton").onclick = playGame;
