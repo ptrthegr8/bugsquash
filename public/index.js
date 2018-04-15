@@ -36,7 +36,7 @@ function bugholeHTML(left, top, imgUrl) {
 for(let row = 0; row < 4; row++) {
     for(let column = 0; column < 4; column++) {
         let bugImg = bugImages[Math.floor(Math.random()*bugImages.length)];
-        gameDiv.innerHTML += bugholeHTML(column*100, row*100, bugImg);
+        gameDiv.innerHTML += bugholeHTML(column*100, row*90, bugImg);
     }
 }
 const bugs = document.getElementsByClassName("bug");

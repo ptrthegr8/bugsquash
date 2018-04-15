@@ -1,7 +1,7 @@
 body {font-size: 20px; font-family: sans-serif;}
-h1 {font-family: 'Luckiest Guy', cursive; font-size: 60px; margin: 20px 0;}
-input {font-size: 20px; margin: 10px 0;}
-button {font-size: 20px; border-radius: 20px; padding: 10px; background: lawngreen; cursor: pointer;}
+h1 {font-family: 'Luckiest Guy', cursive; font-size: 55px; margin: 10px 0;}
+input {font-size: 20px; margin: 10px 0; width: 150px;}
+button {font-size: 20px; border-radius: 20px; padding: 10px; background: lawngreen; cursor: pointer; position: absolute; left: 240px;}
 #gameDiv {position: relative;}
 span {font-size: 20px;}
 .bugOuter {width: 50px; height: 90px; border-radius: 25px / 10px; overflow: hidden; position: absolute;}
