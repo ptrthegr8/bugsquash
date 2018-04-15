@@ -61,7 +61,7 @@ function animate(obj) {
     obj.classList.add("popup");
     setTimeout(function() {
         obj.classList.remove("popup");
-        obj.style.top = "100px";
+        obj.style.top = "70px";
         obj.classList.add("hideagain");
         setTimeout(function() {
             obj.classList.remove("hideagain");
