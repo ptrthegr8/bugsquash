@@ -9,11 +9,11 @@ app.use(express.json());
 app.use(express.static(publicDirectoryPath));
 
 app.get("/scores", (req, res) => {
-  // res.status(200);
-  // res.setHeader('Content-Type', 'application/javascript');
-  // scores.sort((a, b) => (b.score - a.score));
-  // threeTopScores = scores.slice(0, 3);
-  // scores = threeTopScores;
+  res.status(200);
+  res.setHeader('Content-Type', 'application/javascript');
+  scores.sort((a, b) => (b.score - a.score));
+  threeTopScores = scores.slice(0, 3);
+  scores = threeTopScores;
   res.send(scores);
 });
 

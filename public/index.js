@@ -30,6 +30,11 @@ function gameOver() {
     };
 
     function printToMessageBox(json) {
+        if (messageBox.firstChild) {
+            while (messageBox.firstChild) {
+                messageBox.removeChild(messageBox.firstChild);
+            }
+        };
         const text = document.createTextNode(json);
         const div = document.createElement("div");
         div.appendChild(text);
